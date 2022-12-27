@@ -4,8 +4,8 @@ class Secret_word
 	def main_word (file_name)
 	begin
 		f = File.open(file_name, 'r')
-		word = f.read.split(' ').sample
-		return word
+		word = f.read.split(' ').sample.upcase
+		return word.split('')
 	rescue
 		puts ('File not found')
 	end
