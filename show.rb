@@ -6,9 +6,8 @@ module My_show
 			@list = list		#list files
 		end
 		def open_image
-			f = File.open(@list[@num], 'r')
+			f = File.open(@list[@num-1], 'r')
 			puts f.read
-
 		end		
 	end
 
@@ -19,8 +18,7 @@ module My_show
 		end
 		def print_secret_word
 			print ("Secret word - #{@word.join(' ')}\n")
-			print ("Your errors - #{@letters.join(' ').upcase}")
-			
+			print ("Your errors - #{@letters.join(' ').upcase}")			
 		end		
 	end
 end
