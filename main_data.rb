@@ -1,9 +1,12 @@
 module My_data
 
+@@data_path = File.dirname(__FILE__) + '/data/'
+
 class Secret_word
-	def main_word (file_name)
+	include My_data
+	def main_word 
 	begin
-		f = File.open(file_name, 'r')
+		f = File.open(@@data_path + 'words.txt', 'r')
 		word = f.read.split(' ').sample.upcase
 		return word.split('')
 	rescue
@@ -14,15 +17,12 @@ class Secret_word
 end   
 
 class List_image
+	include My_data
         def initialize
-		@data_path = File.dirname(__FILE__) + '/image/'		
 		@image_arr = []
 	end
 	def list_all_image
-	   	@image_arr = Dir.glob(@data_path.to_s + '*')
+	   	@image_arr = Dir.glob(@@data_path + '/image/*')
 	end	
 end
-end
-
-
-
+end    
