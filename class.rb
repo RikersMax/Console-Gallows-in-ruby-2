@@ -3,6 +3,18 @@ module Game
 
 @@attempt_count = 0
 
+def self.result (bad_letters, secret_word)
+	if  bad_letters.length == 6
+	   	puts ("\nYou Lose!")
+		exit
+	end
+
+	if secret_word.include?('_') == false
+		puts ("\nYou Won!")
+		exit
+	end
+end
+
 class User_active
 	include Game
 	attr_reader :user_choice_list, :attempt_count
@@ -20,7 +32,7 @@ class User_active
         
 end
 
-class Good_bad                                #return good array letters and bad array letters
+class Good_bad                                  #return good array letters and bad array letters
 	attr_reader :good, :bad
 	def good_and_bad (list_letter, word)    #list_letter - input user choice letter, word - secret word
 		@good = word & list_letter
@@ -43,14 +55,6 @@ class Check_letter				#return guessed letters
 		end
 	end			
 end
-
-class Image_num 		#must return number image
-	include Game
-	#@@attempt_count
-
-
-end
-
 end
 
 
