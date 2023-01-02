@@ -1,16 +1,17 @@
 #
 module Game
 
-@@attempt_count = 0
 
 def self.result (bad_letters, secret_word)
 	if  bad_letters.length == 6
 	   	puts ("\nYou Lose!")
+		gets
 		exit
 	end
 
 	if secret_word.include?('_') == false
 		puts ("\nYou Won!")
+		gets
 		exit
 	end
 end
@@ -25,11 +26,8 @@ class User_active
 
 	def user_choice 		
 		print ("\nEnter the selected letter: ")
-		@user_choice_list << gets.chomp.upcase				
-		@@attempt_count += 1
-	end
-	
-        
+		@user_choice_list << gets.chomp.upcase		
+	end	        
 end
 
 class Good_bad                                  #return good array letters and bad array letters

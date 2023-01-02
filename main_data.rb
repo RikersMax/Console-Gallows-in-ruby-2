@@ -9,7 +9,7 @@ class Secret_word
 		f = File.open(@@data_path + 'words.txt', 'r')
 		word = f.read.split(' ').sample.upcase
 		return word.split('')
-	rescue
+	rescue (SystemCallError)
 		puts ('File not found')
 	end
 	   	
@@ -18,9 +18,6 @@ end
 
 class List_image
 	include My_data
-        def initialize
-		@image_arr = []
-	end
 	def list_all_image
 	   	@image_arr = Dir.glob(@@data_path + '/image/*')
 	end	

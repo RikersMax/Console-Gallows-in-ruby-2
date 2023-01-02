@@ -2,6 +2,7 @@
 module My_show
 	class Show_image		
 		def open_image (num, list)
+			system 'cls'
 			f = File.open(list[num], 'r')
 			puts f.read
 		end		

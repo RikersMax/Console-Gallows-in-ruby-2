@@ -3,7 +3,7 @@ require './main_data.rb'
 require './class.rb'
 require './show.rb'
 
-system 'cls'
+
 
 secret_word = My_data::Secret_word.new.main_word
 list_image = My_data::List_image.new.list_all_image
