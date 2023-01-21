@@ -54,6 +54,3 @@ class Check_letter				#return guessed letters
 	end			
 end
 end
-
-
-

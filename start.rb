@@ -31,4 +31,3 @@ loop do
 	Game.result(good_bad.bad, check.secret_word)
 		
 end
-
